@@ -17,6 +17,8 @@ class Trie {
         self.head = Node()
     }
     
+    // for-loop을 돌면서 자식이 없으면 자식을 만들어서 추가하고 현재를 자식으로 가져옴 
+    // 맨 마지막 node에 도달하면 데이터를 주입 
     func insert(_ word: String) {
         var cur = head
 
@@ -30,6 +32,7 @@ class Trie {
         cur.data = word
     }
     
+    // 문자를 for-loop을 돌면서 자식이 있으면 참, 없으면 거짓
     func search(_ word: String) -> Bool {
         var cur = head
 
@@ -43,6 +46,7 @@ class Trie {
         return cur.data != nil
     }
     
+    // 접두사 끝까지 도달해서 자식이 있거나, 데이터가 있으면 참, 아니면 거짓
     func startsWith(_ prefix: String) -> Bool {
         var cur = head
 
